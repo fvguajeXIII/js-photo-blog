@@ -17,6 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400..700&family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap"
       rel="stylesheet"
     />
+    <!-- Collegamento al file CSS -->
     <link rel="stylesheet" href="css/style.css" />
     <title>JS Photo Blog</title>
   </head>
@@ -25,5 +26,38 @@
     <header class="text-center p-4">
       <h1>ESTATE '24</h1>
     </header>
+    <main>
+      <div class="container">
+        <div class="row g-4 justify-content-center m-4">
+          <!-- Card 1 -->
+          <div class="col-12 col-md-4">
+            <div
+              class="photo-card bg-white border rounded shadow p-3 position-relative"
+            >
+              <img
+                src="img/pin.svg"
+                class="pin position-absolute top-0 start-50 translate-middle"
+                alt="Pin"
+                style="width: 40px; z-index: 2"
+              />
+              <div
+                class="d-flex align-items-center justify-content-center"
+                style="height: 320px"
+              >
+                <div class="inner-photo" style="background-color: #8bc34a">
+                  <span class="text-muted fs-3">600 x 600</span>
+                </div>
+              </div>
+              <div
+                class="caption mt-2 fst-italic"
+                style="font-family: 'Sometype Mono', monospace"
+              >
+                Accusamus Beatae Ad Facilis Cum Similique Qui Sunt
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
