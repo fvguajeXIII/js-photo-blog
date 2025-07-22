@@ -1,10 +1,10 @@
-// Seleziona il contenitore delle card Bootstrap
-const row = document.querySelector(`.row.g-4`);
-
 // Array di colori per i box colorati delle foto
 const colors = [
   "#8bc34a", "#771796", "#24f355", "#d32776", "#f66b97", "#56a8c2"
 ];
+
+// Seleziona il contenitore delle card Bootstrap
+const row = document.querySelector(`.row.g-4`);
 
 // Effettua una richiesta GET all'endpoint API usando Axios
 axios.get('https://lanciweb.github.io/demo/api/pictures/')
@@ -13,6 +13,12 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
     row.innerHTML = '';
     // Cicla su ogni foto ricevuta dalla risposta API
     response.data.forEach((pic, i) => {
+      // Format data (esempio: 2024-07-22 → 22/07/2024)
+      let date = '';
+      if (pic.date) {
+        const d = new Date(pic.date);
+        date = `${d.getDate().toString().padStart(2, '0')}/${(d.getMonth()+1).toString().padStart(2, '0')}/${d.getFullYear()}`;
+      }
       // Aggiunge una card Bootstrap per ogni foto
       row.innerHTML += `
         <div class="col-12 col-md-4">
@@ -26,9 +32,10 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
                 <img src="${pic.url}" alt="${pic.title}" style="max-width: 100%; max-height: 100%; object-fit: cover; border-radius: 10px;">
               </div>
             </div>
-            <!-- Caption sotto la foto -->
-            <div class="caption mt-2 fst-italic" style="font-family: 'Sometype Mono', monospace">
-              ${pic.title}
+            <!-- Caption sotto la foto: titolo e data -->
+            <div class="caption mt-2 fst-italic text-start" style="font-family: 'Sometype Mono', monospace">
+              <strong>${pic.title}</strong><br>
+              <span class="text-muted">${date}</span>
             </div>
           </div>
         </div>

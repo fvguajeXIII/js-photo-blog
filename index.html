@@ -3,49 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Collegamento bootstrap -->
+    <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
       crossorigin="anonymous"
     />
-    <!-- Link google font -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400..700&family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap"
       rel="stylesheet"
     />
-    <!-- Link AXIOS JS -->
+    <!-- Axios per chiamate AJAX -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <!-- Collegamento al file CSS -->
+    <!-- Foglio di stile personalizzato -->
     <link rel="stylesheet" href="css/style.css" />
     <title>JS Photo Blog</title>
   </head>
 
   <body>
+    <!-- Header con titolo -->
     <header class="text-center p-4">
       <h1>ESTATE '24</h1>
     </header>
     <main>
       <div class="container">
+        <!-- Qui verranno generate dinamicamente le card delle foto -->
         <div class="row g-4 justify-content-center m-4">
           <!-- Le card vengono generate qui da JS -->
         </div>
       </div>
     </main>
-    <!-- Overlay -->
+    <!-- Overlay per visualizzare la foto ingrandita -->
     <div id="overlay" class="overlay-hidden">
       <div class="overlay-content">
+        <!-- Immagine visualizzata nell'overlay -->
         <img
           src="https://picsum.photos/400/300"
           alt="Immagine overlay"
           class="overlay-img"
         />
+        <!-- Bottone per chiudere l'overlay -->
         <button class="overlay-close">Chiudi</button>
       </div>
     </div>
+    <!-- Script principale per la logica JS -->
     <script src="js/script.js"></script>
   </body>
 </html>
