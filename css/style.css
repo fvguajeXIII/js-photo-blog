@@ -50,3 +50,40 @@ header, h1{
   color: #bdbdbd;
   font-family: 'Sometype Mono', monospace;
 }
+
+#overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.overlay-content {
+  background: #fff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.overlay-img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.overlay-close {
+  margin-top: 24px;
+  padding: 8px 24px;
+  border: none;
+  border-radius: 6px;
+  background: #d32776;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
