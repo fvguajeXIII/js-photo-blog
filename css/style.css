@@ -91,3 +91,29 @@ header, h1{
 .overlay-hidden {
   display: none !important;
 }
+
+.photo-card {
+  width: 340px;
+  min-height: 420px;
+  max-height: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* ...altri stili... */
+}
+
+.inner-photo {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.inner-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
