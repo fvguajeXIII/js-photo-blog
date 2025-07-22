@@ -40,16 +40,17 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
     row.innerHTML = '<div class="text-danger">Errore nel caricamento delle foto.</div>';
   });
 
-// Seleziona overlay e bottone di chiusura
+// Seleziona overlay, bottone di chiusura e immagine dell'overlay
 const overlay = document.getElementById('overlay');
 const closeBtn = document.querySelector('.overlay-close');
+const overlayImg = overlay.querySelector('.overlay-img');
 
-// Mostra overlay al click su una foto
+// Mostra overlay al click su una foto e aggiorna l'immagine
 document.addEventListener('click', function (e) {
-  // Se il click è su una foto dentro .inner-photo
-  if (e.target.closest('.inner-photo img')) {
+  const clickedImg = e.target.closest('.inner-photo img');
+  if (clickedImg) {
+    overlayImg.src = clickedImg.src; // Mostra la foto cliccata nell'overlay
     overlay.classList.remove('overlay-hidden');
-    // Puoi cambiare l'immagine dell'overlay qui se vuoi
   }
 });
 
